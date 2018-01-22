@@ -1,25 +1,20 @@
 #!/usr/bin/python
-# Script to validate VPN connection and Country
-# Troy Wilson
-# Date: 1-28-2016
 #
 import urllib2
 import re
 
 ## Open Connection ##
-opener = urllib2.build_opener()
-opener.addheaders = [('User-agent', 'Mozilla/5.0')]
-url = ('http://www.ip-lookup.net')
-oururl = opener.open(url).read()
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
+oururl = opener.open('http://www.ip-lookup.net')
 
 ## IP Addresss finder ##
-theIP = re.compile('\d{1,3}\.\d{1,3}\.\d{1,3}.\d{1,3}')
-ip = re.search(theIP, oururl)
+theIP = re.compile(r"d{1,3}.d{1,3}.d{1,3}.d{1,3}")
+ip = re.search(theIP, str(oururl))
 
 ## Country finder ##
 roughCountry = re.compile('([A-Z]\w+)( [A-Z]\w+){0,2}(?=\<\/a\>\s\s)')
-Country = re.search(roughCountry, oururl)
+Country = re.search(roughCountry, str(oururl))
 
 ## Print out ##
-print "Your IP is:", ip.group()
-print "Your Country is:", Country.group()
+print "Your IP is:", ip
+print "Your Country is:", Country
