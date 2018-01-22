@@ -8,6 +8,10 @@ import re
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
 oururl = opener.open('http://www.ip-lookup.net')
 
+soup = BeautifulSoup(oururl)
+print soup.prettify()
+print title
+
 ## IP Addresss finder ##
 #theIP = re.compile(r"d{1,3}.d{1,3}.d{1,3}.d{1,3}")
 #ip = re.search(theIP, str(oururl))
