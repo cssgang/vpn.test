@@ -10,9 +10,7 @@ opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 my_ip = opener.open('http://ipchickenhawk.com/')
 my_ip =  my_ip.read()
 iplist = re.findall( r'[0-9]+(?:\.[0-9]+){3}', my_ip ) [0]
-
-
-print iplist
+print "IP Address: %s" % iplist
 
 ## Get Geolocation ##
 #geo = requests.get('http://ipinfo.io/%s/country' % my_ip)
