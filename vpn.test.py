@@ -6,7 +6,7 @@ import re
 ## Open Connection ##
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
-website = urllib2.urlopen('http://www.example.com/')
+website = urllib2.urlopen('http://www.ip-lookup.net')
 website_html = website.read()
 
 ## Output of oururl to file ##
