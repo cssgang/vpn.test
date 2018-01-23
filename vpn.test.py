@@ -18,7 +18,7 @@ loc = str(geo_lo.content).rstrip()
 print "Country: %s" % loc
 
 ## Get Geolocation - City ##
-geo_city = requests.get('http://ipinfo.io/%s/city' % ip)
-city = str(geo_city.content).rstrip()
-print "City: %s" % city
+geo_region = requests.get('http://ipinfo.io/%s/region' % ip)
+region = str(geo_region.content).rstrip()
+print "Region: %s" % region
 
