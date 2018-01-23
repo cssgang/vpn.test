@@ -5,19 +5,9 @@ import urllib2
 import re
 
 ## Open Connection ##
-url = 'http://www.ip-look up.net'
-user_agent = 'Mozilla/5.0'
-headers = {'User-Agent':user_agent}
-
-req = urllib2.Request(url, headers)
-response = urllib2.urlopen(req)
-the_page = response.read()
-
-
-#opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
-#opener.addheaders = [('User-agent', 'Mozilla/5.0')]
-#website = urllib2.urlopen('http://www.ip-lookup.net')
-#website_html = website.read()
+opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+website = urllib2.urlopen('https://www.iplocation.net/')
+website_html = website.read()
 
 ## Output of oururl to file ##
 with open("Output.txt", "w") as text_file:
