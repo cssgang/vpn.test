@@ -12,9 +12,13 @@ my_ip =  my_ip.read()
 ip = re.findall( r'[0-9]+(?:\.[0-9]+){3}', my_ip ) [0]
 print "IP Address: %s" % ip
 
-## Get Geolocation ##
+## Get Geolocation - Country ##
 geo_lo = requests.get('http://ipinfo.io/%s/country' % ip)
-loc = str(geo_lo.content)
+loc = str(geo_lo.content).rstrip()
 print "Country: %s" % loc
 
+## Get Geolocation - City ##
+geo_city = requests.get('http://ipinfo.io/%s/city' % ip)
+city = str(geo_city.content).rstrip()
+print "City: %s" % city
 
