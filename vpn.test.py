@@ -7,6 +7,10 @@ import re
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor())
 opener.addheaders = [('User-agent', 'Mozilla/5.0')]
 website = urllib2.urlopen('http://www.ip-lookup.net')
+except urllib2.HTTPError, e:
+    print "Cannot retrieve URL: HTTP Error Code", e.code
+except urllib2.URLError, e:
+    print "Cannot retrieve URL: " + e.reason[1]
 website_html = website.read()
 
 ## Output of oururl to file ##
