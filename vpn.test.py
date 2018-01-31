@@ -3,23 +3,23 @@
 #
 
 import urllib2
-import requests
 import re
+import requests
 
 ## Get IP ##
-opener = urllib2.build_opener()
-opener.addheaders = [('User-agent', 'Mozilla/5.0')]
-my_ip = opener.open('http://ipchickenhawk.com/')
-my_ip =  my_ip.read()
-ip = re.findall( r'[0-9]+(?:\.[0-9]+){3}', my_ip ) [0]
-print "IP Address: %s" % ip
+OPENER = urllib2.build_OPENER()
+OPENER.addheaders = [('User-agent', 'Mozilla/5.0')]
+MY_IP = OPENER.open('http://ipchickenhawk.com/')
+MY_IP = MY_IP.read()
+IP = re.findall(r'[0-9]+(?:\.[0-9]+){3}', MY_IP)[0]
+print "IP Address: %s" % IP
 
-## Get Geolocation - Country ##
-geo_lo = requests.get('http://ipinfo.io/%s/country' % ip)
-loc = str(geo_lo.content).rstrip()
-print "Country: %s" % loc
+## Get GeoLOCation - Country ##
+GEO_LO = requests.get('http://ipinfo.io/%s/country' % IP)
+LOC = str(GEO_LO.content).rstrip()
+print "Country: %s" % LOC
 
-## Get Geolocation - City ##
-geo_region = requests.get('http://ipinfo.io/%s/region' % ip)
-region = str(geo_region.content).rstrip()
-print "Region: %s" % region
+## Get GeoLOCation - City ##
+GEO_REGION = requests.get('http://ipinfo.io/%s/region' % IP)
+REGION = str(GEO_REGION.content).rstrip()
+print "Region: %s" % REGION
