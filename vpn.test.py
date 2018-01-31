@@ -23,4 +23,3 @@ print "Country: %s" % loc
 geo_region = requests.get('http://ipinfo.io/%s/region' % ip)
 region = str(geo_region.content).rstrip()
 print "Region: %s" % region
-
