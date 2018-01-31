@@ -7,7 +7,7 @@ import re
 import requests
 
 ## Get IP ##
-OPENER = urllib2.build_OPENER()
+OPENER = urllib2.build_opener()
 OPENER.addheaders = [('User-agent', 'Mozilla/5.0')]
 MY_IP = OPENER.open('http://ipchickenhawk.com/')
 MY_IP = MY_IP.read()
