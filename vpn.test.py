@@ -7,7 +7,7 @@ import requests
 ## Get IP ##
 OPENER = urllib2.build_opener()
 OPENER.addheaders = [('User-agent', 'Mozilla/5.0')]
-MY_IP = OPENER.open('http://ipchickenhawk.com/')
+MY_IP = OPENER.open('http://ipchicken.com/')
 MY_IP = MY_IP.read()
 IP = re.findall(r'[0-9]+(?:\.[0-9]+){3}', MY_IP)[0]
 print "IP Address: %s" % IP
